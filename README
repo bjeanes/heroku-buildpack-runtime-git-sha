@@ -1,0 +1,19 @@
+# heroku-buildpack-runtime-git-sha
+
+Record the pushed Git SHA in the slug so it can be inspected at dyno runtime.
+
+## Usage
+
+This should be used in combination with [heroku-buildpack-multi](https://github.com/ddollar/heroku-buildpack-multi):
+
+```
+$ heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
+
+$ cat .buildpacks
+https://github.com/your-primary/buildpack-here
+https://github.com/bjeanes/heroku-buildpack-runtime-git-sha
+```
+
+## License
+
+[MIT](http://bjeanes.mit-license.org/)

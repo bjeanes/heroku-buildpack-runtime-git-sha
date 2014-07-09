@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+if git --git-dir . rev-parse 2>/dev/null; then
+  echo "Git repo"
+  exit 0
+else
+  exit 1
+fi

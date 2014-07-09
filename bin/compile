@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+build_dir=$1
+
+sha=`git --git-dir . rev-parse HEAD`
+
+echo "-----> Recording current git sha ($sha)"
+
+echo "       Writing to VERSION file"
+echo $sha > $build_dir/VERSION
+
+echo "       Setting to CURRENT_VERSION environment variable"
+mkdir -p $build_dir/.profile.d
+echo "export CURRENT_VERSION=$sha" > $build_dir/.profile.d/git_version.sh
+
